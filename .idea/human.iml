@@ -3,9 +3,27 @@
   <component name="GemRequirementsHolder" version="3">
     <requirement>
       <requirement>
+        <dependency name="bundler" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="nokogiri" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="open-uri" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rake" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source manual="true" />
     </requirement>
     <requirement>
       <requirement>
@@ -13,11 +31,26 @@
       </requirement>
       <source from="Gemfile" />
     </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rubygems-update" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rake (v0.9.1, /Users/pablokang/.rvm/gems/ruby-1.9.2-p180@global/gems/rake-0.9.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rubygems-update (v1.8.5, /Users/pablokang/.rvm/gems/ruby-1.9.2-p180@global/gems/rubygems-update-1.8.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] diff-lcs (v1.1.2, /Users/pablokang/.rvm/gems/ruby-1.9.2-p180@human_rights/gems/diff-lcs-1.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] nokogiri (v1.5.0.beta.4, /Users/pablokang/.rvm/gems/ruby-1.9.2-p180@human_rights/gems/nokogiri-1.5.0.beta.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec (v2.6.0, /Users/pablokang/.rvm/gems/ruby-1.9.2-p180@human_rights/gems/rspec-2.6.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-core (v2.6.3, /Users/pablokang/.rvm/gems/ruby-1.9.2-p180@human_rights/gems/rspec-core-2.6.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-expectations (v2.6.0, /Users/pablokang/.rvm/gems/ruby-1.9.2-p180@human_rights/gems/rspec-expectations-2.6.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-mocks (v2.6.0, /Users/pablokang/.rvm/gems/ruby-1.9.2-p180@human_rights/gems/rspec-mocks-2.6.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] bundler (v1.0.14, /Users/pablokang/.rvm/gems/ruby-1.9.2-p180@human_rights/gems/bundler-1.0.14)" level="application" />
   </component>
 </module>
 
