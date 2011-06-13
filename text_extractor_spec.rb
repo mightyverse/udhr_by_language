@@ -26,7 +26,7 @@ describe "UDHR::Document" do
       end
     end
 
-    describe "with valid doc from general OHR UN site" do
+    describe "with english doc from general OHR UN site" do
       # http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eng
       let(:doc) { UDHR::Document.new('./fixtures/ohchr-eng.html') }
 
@@ -35,11 +35,13 @@ describe "UDHR::Document" do
         doc.phrases.should include("Article 30")
       end
 
-      it "gets article contents without extra white space" do
-        doc.phrases.should include("Everyone has the right to work, to free choice of employment, to just and favourable conditions of work and to protection against unemployment.")
+      it "gets Article 26.1 without extra white space" do
+        doc.phrases.should include("Everyone has the right to education. Education shall be free, at least in the elementary and fundamental stages. Elementary education shall be compulsory. Technical and professional education shall be made generally available and higher education shall be equally accessible to all on the basis of merit.")
+      end
+      it "gets Article 23.2 contents without extra white space" do
+        doc.phrases.should include("Everyone has the right to freedom of movement and residence within the borders of each State.")
       end
     end
-
 
     describe "clean text" do
       it "removes leading spaces" do
