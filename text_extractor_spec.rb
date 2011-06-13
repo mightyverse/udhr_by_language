@@ -9,23 +9,6 @@ describe "UDHR::Document" do
       }.should raise_error(ArgumentError)
     end
 
-    describe "with valid doc from general UN site" do
-      # http://www.un.org/en/documents/udhr/index.shtml
-      let(:doc) { UDHR::Document.new('./fixtures/en.html') }
-      it "provides full HTML as Nokogiri doc" do
-        doc.html.should be_a(Nokogiri::HTML::Document)
-      end
-
-      it "provides an array of phrases including article headings" do
-        doc.phrases.should include("Article 1.")
-        doc.phrases.should include("Article 30.")
-      end
-
-      it "gets article contents without extra white space" do
-        doc.phrases.should include("Everyone has the right to work, to free choice of employment, to just and favourable conditions of work and to protection against unemployment.")
-      end
-    end
-
     describe "with english doc from general OHR UN site" do
       # http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eng
       let(:doc) { UDHR::Document.new('./fixtures/ohchr-eng.html') }
