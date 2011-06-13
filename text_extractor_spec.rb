@@ -32,6 +32,10 @@ describe "UDHR::Document" do
       it "gets Article 23.2 contents without extra white space" do
         doc.phrases[57].should == "Everyone, without any discrimination, has the right to equal pay for equal work."
       end
+
+      it "has 80 phrases" do
+        doc.phrases.length.should == 80
+      end
     end
 
     describe "with german doc from general OHR UN site" do
@@ -56,6 +60,11 @@ describe "UDHR::Document" do
       it "gets Article 26.1 without extra white space" do
         doc.phrases[66].should == "Jeder hat das Recht auf Bildung. Die Bildung ist unentgeltlich, zum mindesten der Grundschulunterricht und die grundlegende Bildung. Der Grundschulunterricht ist obligatorisch. Fach- und Berufsschulunterricht müssen allgemein verfügbar gemacht werden, und der Hochschulunterricht muß allen gleichermaßen entsprechend ihren Fähigkeiten offenstehen."
       end
+
+      it "has 80 phrases" do
+        doc.phrases.length.should == 80
+      end
+      
     end
 
 
