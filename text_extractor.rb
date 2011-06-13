@@ -7,9 +7,11 @@ module UDHR
       open(filename) do |f|
         @html = Nokogiri::HTML(f)
         data = []
-        @html.css('#content').children.each do |child| 
-          data << child if child.name == 'h3'
-          data += child.css('li') if child.name == 'ul'          
+        nodes = @html.css('#content') # data from main UN site
+        nodes = @html.css('#TEST div span') if nodes.empty? # from OHC site
+        nodes.children.each do |child| 
+          data << child if child.name == 'h3' || child.name == 'h4'
+          data += child.css('li') if child.name == 'ul' || child.name == 'ol'       
         end
         @phrases = data.map { |node| UDHR::Document.clean_text(node.inner_text) }
       end
@@ -17,6 +19,7 @@ module UDHR
 
     def self.clean_text(t)
       t.gsub!(/^\s*\(?\s*\d*\s*\)?\s*/, "")
+      t.gsub!(/\s*$/, "")
       t.gsub!(/\s+/, " ")      
     end
   end
