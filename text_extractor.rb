@@ -15,6 +15,7 @@ module UDHR
           next unless article1
 
           data << child if child.name == 'h4'
+          data << child if child.name == 'p'
           data += child.css('li') if child.name == 'ul' || child.name == 'ol'     
         end
         @phrases = data.map { |node| UDHR::Document.clean_text(node.inner_text) }
@@ -22,9 +23,9 @@ module UDHR
     end
 
     def self.clean_text(t)
-      t.gsub!(/^\s*\(?\s*\d*\s*\)?\s*/, "")
-      t.gsub!(/\s*$/, "")
-      t.gsub(/\s+/, " ")      
+      t.gsub!(/^\s*\(?\s*\d*\.?\s*\)?\s*/, "")  # remove leading numbers and whitespace
+      t.gsub!(/\s*$/, "")   # remove trailing whitespace
+      t.gsub(/\s+/, " ")    # remove double spaces
     end
   end
 end
