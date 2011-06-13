@@ -1,0 +1,188 @@
+/* THIS STYLE SHEET IS COMMON AMONG ALL NON_THEMATIC PAGES. */
+
+/* THIS WAS THE _DEV VERSION. It was renamed without the _dev on 19 02 09 by Robert and Elimira*/
+/* LANGUAGE BAR */
+
+#languages {
+	background-color: #E1E3F8;
+}
+#languages ul li#english  {
+	color: #039;
+}	
+#languages ul li a:link, #languages ul li a:visited, #languages ul li a:hover, #languages ul li a:active {
+	color:#333;
+	text-decoration:none;
+}
+#languages ul li a:hover { color: #0958FF; }
+/* Banner Height */
+
+#topbanner #hiddentitle, #hiddentitle span {
+	height: 124px;}
+
+/* MAIN NAVIGATION (left): navigation links */
+
+body
+{color:#333}
+
+#mainnav {
+	float: left;
+	width: 19%;
+	background-color: #EBEEF5;
+	padding-bottom:1em;
+}
+#mainnav .theme {
+	font-weight: bold;
+}
+
+#mainnav h2 {
+	background-color: #C7CFE2;
+	font-weight: bold;
+	color: #011E49;
+	margin: 0px;
+	padding-top: 0.2em;
+	padding-right: 0.4em;
+	padding-bottom: 0.2em;
+	padding-left: 0.7em;
+	font-size: 1em;
+}
+#mainnav ul {
+	margin: 0px;
+}
+
+#mainnav ul li {
+	list-style-type: none;
+}
+
+#mainnav ul li a {
+	display: block;
+	text-decoration: none;
+	border-bottom: 1px solid #B8C2DC;
+	font-size: 0.9em;
+	padding-right: 0.7em;
+	padding-bottom: 0.4em;
+	padding-left: 0.7em;
+	padding-top: 0.3em;
+}	
+	
+#mainnav ul li a:hover  {
+	background-color: #D6DEF5;
+}
+#mainnav ul li a:visited {
+	color: #00275B;
+}
+#mainnav  a:link, #mainnav  a:active    {
+	color:#00275B;
+}
+
+.pdfnote {
+	text-align: left;
+	display: block;
+	font-size: 85%;
+	padding-left: 0.7em;
+	color:#333333;
+}
+
+
+/* PAGE CONTENTS */
+
+#content {
+	width: 79%;
+	float: left;
+	margin: 0;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 1em;
+	padding-left: 0.7em;
+}
+
+#content h2 {
+	color: #02327A;
+	padding-bottom: .4em;
+	}
+#content h2.alphabet {
+font-size: 1em;
+}
+	
+#content  p.toppara {
+	padding-top: 2em;
+}
+
+#content a:link, #content a:visited, #content a:hover, #content a:active {
+	color:#02327A;
+	text-decoration: underline;
+}
+
+#content ul li {
+	list-style-type: none;
+}
+#content ul ul li  {
+/*	font-size: 120%; */
+}
+
+#content ul ul ul li {
+/*	font-size: 140%; */
+}
+
+/* BOXED TEXT */
+
+#content #boxtext {
+	display: block;
+	background-color: #EBEEF5;
+	border: 1px dotted #6666FF;
+	padding-bottom: 0.3em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	float: left;
+	width: 98%;
+}
+
+#content #boxtext h2 {
+	padding-bottom: 0.2em;
+	background-color: #D9DEEC;
+	display: block;
+	padding-left: 0.5em;
+	border-style: none;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0.6em;
+	margin-left: 0px;
+	padding-top: .2em;
+}
+#content #boxtext p {
+	padding-right: 0.7em;
+	padding-left: 0.7em;
+	color: #10215A;
+}
+#content #boxtext .top {
+	padding-top: 0.6em;
+}
+
+
+
+/* FOOTER BAR */
+#footer {
+	height: 1.9em;
+	background-color: #0D317D;
+	color: #E1E3F8;		
+}
+
+#footer ul {
+	margin-top: 0em;
+}
+#footer ul li  {
+	display: inline;
+}
+#footer ul li a {
+	color: #E1E3F8;
+	text-decoration: none;
+}
+#footer ul li a:visited {	
+	
+	color: #E1E3F8;
+	text-decoration: none;
+}
+#footer ul li a:hover {	
+	text-decoration: underline;
+	color: #999BBF;
+	
+}

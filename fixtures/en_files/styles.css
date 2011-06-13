@@ -1,0 +1,247 @@
+/* Style sheet for UN Day */
+
+@media print {
+* { background: #fff; color: #000; }
+html { font: 100%/1.5 georgia, serif; }
+
+div#content {float:none}
+
+div#udhr {float:none}
+
+div#topbanner {float:none}
+
+div#mainnav {display:none;width:0%; float:none}
+.column {float:none}
+
+body {float:none}
+}
+
+body {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	margin-top: 0px;
+	background-color: #872A09;
+	background-repeat: repeat-x;
+	background-image: url(images/grad.jpg);
+}
+	
+/* MAIN CONTAINER - HOMEPAGE*/
+
+#main {
+	width: 780px;
+	margin: 0px auto;
+	background-color: #FFFFFF;
+	border: 1px solid #300906;
+}	
+
+ /* SKIP TO NAVIGATION AND SKIP TO TEXT*/
+ 
+#skiplink {
+	padding: 0px;
+	margin: 0px;
+	clear: both;
+	font-size: 10px;
+	display: inline;
+	color: #C9600D;
+}
+#skiplink a {
+	color:#C9600D;
+}
+#skiplink a:focus, div#skiplink a:active
+{
+	color:#F9F1E4;
+	background-color: #300906;
+}
+
+/* TOP BANNER */
+
+#topbanner {
+	clear: none;
+	background-image: url(images/grad.jpg);
+	background-repeat: repeat-x;
+	height:159px;
+	
+}
+
+
+
+#hiddentitle, #hiddentitle span {
+	margin: 0px;
+	padding: 0px;
+	background-image: url(images/banner.jpg);
+	background-repeat: no-repeat;
+	height: 159px;
+}
+
+#hiddentitle span {
+	margin-bottom: -75px;
+}
+
+h1 {
+	font-size: 15px;
+	padding:0;
+	margin:0;
+	text-align: center;
+	color: #300906;
+}
+h1 span {
+	display: block;
+	position: relative;
+	z-index: 1;	
+}
+
+ /* LEFT MENU NAVIGATION LINKS - HOMEPAGE*/
+#clear {
+	width: 176px;
+	height: 6px;
+	background-color: #E1C893;
+	padding-top: 1px;
+}
+
+#mainnav  {
+	float: left;
+	width: 18%;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #FBCC60;
+	padding-bottom: 20px;
+	clear: left;
+}
+
+#mainnav ul {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	font-weight: normal;
+	list-style-type: none;
+}
+#mainnav ul li.first {
+	margin-top: 6px;
+}
+
+#mainnav.column a   {
+	margin:0;
+	padding: 4px 10px 4px 14px;
+	color:#000000;
+	text-decoration:none;
+	display: block;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #e5b64b;
+}
+
+#mainnav.column ul li a:visited{
+color:#611f09;
+}
+
+#mainnav.column ul li a:hover{
+background-color:#FFFFFF;
+border-left-color:#ee940a;
+border-left-style:solid;
+border-left-width:4px;
+}
+
+
+/* Languages */
+
+#languages{
+background-color:#df8b07;
+}
+
+#main #languages ul li {
+color:#FFFFFF;
+}
+#main #languages ul li a{
+color:#7c090c;
+}
+
+
+
+/* PAGE CONTENT ATTRIBUTES */
+
+#content{
+width:80%;
+
+}
+#content h2 {
+	color: #7F0D0D;
+	
+	font-weight: bold;
+	text-transform: uppercase;
+
+}
+#content h3 {
+	color: #660000;
+	
+	font-weight: bold;
+
+}
+	
+#content a:link {
+	color: #A80E13;
+}
+#content a:visited {
+	color: #513403;
+	
+}
+#content a:hover { 
+	color: #660000;
+}
+#content a:active {
+	color: #513403;
+}
+
+
+#content ul li {
+	
+	color: #300906;
+	list-style-type:disc;
+	padding-top: 0;
+	padding-right: 0%;
+	padding-bottom: 1%;
+	padding-left: 1%;
+	list-style-position:inside;
+}
+
+
+/* BOX QUOTE */
+blockquote {
+	display: block;
+	left: 300px;
+	background-color: #FCE7A4;
+	padding: 2%;
+	margin: 2%;
+	border-top-width: 5px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #EE9408;
+	border-bottom-color: #EE9408;
+	
+}
+blockquote p {
+	margin: 0px;
+	padding: 1% 2% 0 1%;
+	line-height: 150%;
+	font-size: 0.8em;
+}
+
+blockquote .credit {
+	text-align: right;
+	font-style: oblique;
+	display: block;
+	padding-right: 2%;
+	padding-bottom: 3px;
+	font-size: 0.8em;
+	margin-top: 12px;
+}
+
+.totop p a{
+float:right;
+width:100%;
+padding-right:3px;
+clear:both;
+}
+
+
+#footer {
+	background-color: #660000;
+}
