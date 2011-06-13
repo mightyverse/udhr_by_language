@@ -18,6 +18,10 @@ describe "UDHR::Document" do
         doc.phrases.should include("Article 30")
       end
 
+      it "should begin with the first Article" do
+        doc.phrases.first.should == "Article 1"
+      end
+
       it "gets Article 26.1 without extra white space" do
         doc.phrases.should include("Everyone has the right to education. Education shall be free, at least in the elementary and fundamental stages. Elementary education shall be compulsory. Technical and professional education shall be made generally available and higher education shall be equally accessible to all on the basis of merit.")
       end
@@ -42,6 +46,9 @@ describe "UDHR::Document" do
       it "removes leading numbers in parens with extra whitespace" do
         UDHR::Document.clean_text("  ( 3 )   Something here.").should == "Something here."
       end 
+      it "leaves text with no spaces intact" do
+        UDHR::Document.clean_text("Something").should == "Something"
+      end
     end
 
   end

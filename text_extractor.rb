@@ -8,7 +8,12 @@ module UDHR
         @html = Nokogiri::HTML(f)
         data = []
         nodes = @html.css('#TEST div span')
+        article1 = false
         nodes.children.each do |child| 
+          # for now skip everything before the first Article
+          article1 = true if child.name == 'h4' && child.inner_text.include?("1")
+          next unless article1
+
           data << child if child.name == 'h4'
           data += child.css('li') if child.name == 'ul' || child.name == 'ol'     
         end
@@ -19,7 +24,7 @@ module UDHR
     def self.clean_text(t)
       t.gsub!(/^\s*\(?\s*\d*\s*\)?\s*/, "")
       t.gsub!(/\s*$/, "")
-      t.gsub!(/\s+/, " ")      
+      t.gsub(/\s+/, " ")      
     end
   end
 end
