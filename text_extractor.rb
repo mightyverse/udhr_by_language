@@ -15,7 +15,9 @@ module UDHR
           next unless article1
 
           data << child if child.name == 'h4'
-          data << child if child.name == 'p'
+          if child.name == 'p'
+            data += child.xpath('text()')
+          end
           data += child.css('li') if child.name == 'ul' || child.name == 'ol'     
         end
         @phrases = data.map { |node| UDHR::Document.clean_text(node.inner_text) }
