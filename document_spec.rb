@@ -1,6 +1,6 @@
 # encoding: utf-8
 $LOAD_PATH << '.'
-require 'text_extractor'
+require 'document'
 
 describe "UDHR::Document" do
   describe "text extraction" do 
@@ -14,6 +14,10 @@ describe "UDHR::Document" do
       # http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eng
       let(:doc) { UDHR::Document.new('./fixtures/ohchr-eng.html') }
 
+      it "has 30 articles" do
+        doc.articles.length.should == 30
+      end
+
       it "provides an array of phrases including article headings" do
         doc.phrases.should include("Article 30")
       end
@@ -23,8 +27,13 @@ describe "UDHR::Document" do
       end
 
       it "should have the text of the first Article as the second phrase" do
-        doc.phrases[1].should ==  "All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood."
+        doc.phrases[1].should == "All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood."
       end
+
+      it "should have the text of the second Article part 1 as the fourth phrase" do
+        doc.phrases[3].should == "Everyone is entitled to all the rights and freedoms set forth in this Declaration, without distinction of any kind, such as race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status."
+      end
+      
 
       it "gets Article 26.1 without extra white space" do
         doc.phrases[66].should == "Everyone has the right to education. Education shall be free, at least in the elementary and fundamental stages. Elementary education shall be compulsory. Technical and professional education shall be made generally available and higher education shall be equally accessible to all on the basis of merit."

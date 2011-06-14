@@ -1,12 +1,14 @@
 require 'nokogiri'
+require './article'
 
 module UDHR
   class Document
-    attr_reader :phrases, :html
+    attr_reader :articles, :html
+
     def initialize(filename)
       open(filename) do |f|
         @html = Nokogiri::HTML(f)
-        data = []
+        @articles = []
         nodes = @html.css('#TEST div span')
         article1 = false
         nodes.children.each do |child| 
@@ -14,14 +16,32 @@ module UDHR
           article1 = true if child.name == 'h4' && child.inner_text.include?("1")
           next unless article1
 
-          data << child if child.name == 'h4'
-          if child.name == 'p'
-            data += child.xpath('text()')
+          if child.name == 'h4' 
+            @articles << Article.new(UDHR::Document.clean_text(child.inner_text))
+          else 
+            article = @articles.last
+            data = []
+            if child.name == 'p'
+              data += child.xpath('text()') 
+              article.text = article.text + data.map { |node| UDHR::Document.clean_text(node.inner_text) }
+            end
+            if child.name == 'ul' || child.name == 'ol'
+              data += child.css('li') 
+              article.sections = data.map { |node| UDHR::Document.clean_text(node.inner_text) }
+            end
+            
           end
-          data += child.css('li') if child.name == 'ul' || child.name == 'ol'     
+          
         end
-        @phrases = data.map { |node| UDHR::Document.clean_text(node.inner_text) }
       end
+    end
+
+    def phrases
+      result = []
+      @articles.each do |article|
+        result += article.phrases
+      end
+      result
     end
 
     def self.clean_text(t)
