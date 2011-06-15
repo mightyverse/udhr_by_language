@@ -3,7 +3,6 @@ $LOAD_PATH << '.'
 require 'document'
 
 describe "UDHR::Document" do
-  describe "text extraction" do 
     it "requires a filename on creation" do
       lambda {
         doc = UDHR::Document.new
@@ -107,6 +106,4 @@ describe "UDHR::Document" do
         UDHR::Document.clean_text("Something").should == "Something"
       end
     end
-
-  end
 end
