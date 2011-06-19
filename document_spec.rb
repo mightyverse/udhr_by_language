@@ -10,8 +10,8 @@ describe "UDHR::Document" do
     end
 
     describe "with english doc from general OHR UN site" do
-      # http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eng
-      let(:doc) { UDHR::Document.new('./fixtures/ohchr-eng.html') }
+      # unicode.org xml version
+      let(:doc) { UDHR::Document.new('./fixtures/udhr_eng.xml') }
 
       it "has 30 articles" do
         doc.articles.length.should == 30
@@ -47,8 +47,8 @@ describe "UDHR::Document" do
     end
 
     describe "with german doc from general OHR UN site" do
-      # http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eng
-      let(:doc) { UDHR::Document.new('./fixtures/ohchr-ger.html') }
+      # unicode document
+      let(:doc) { UDHR::Document.new('./fixtures/udhr_deu_1996.xml') }
 
       it "provides an array of phrases including article headings" do
         doc.phrases.should include("Artikel 30")
@@ -59,7 +59,7 @@ describe "UDHR::Document" do
       end
 
       it "should have the text of the first Article as the second phrase" do
-        doc.phrases[1].should ==  "Alle Menschen sind frei und gleich an Würde und Rechten geboren. Sie sind mit Vernunft und Gewissen begabt und sollen einander im Geiste der Brüderlichkeit begegnen."
+        doc.phrases[1].should ==  "Alle Menschen sind frei und gleich an Würde und Rechten geboren. Sie sind mit Vernunft und Gewissen begabt und sollen einander im Geist der Brüderlichkeit begegnen."
       end
       it "gets Article 23.2 contents without extra white space" do
         doc.phrases[57].should == "Jeder, ohne Unterschied, hat das Recht auf gleichen Lohn für gleiche Arbeit."

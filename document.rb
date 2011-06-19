@@ -6,32 +6,17 @@ module UDHR
     attr_reader :articles, :html
 
     def initialize(filename)
-      open(filename) do |f|
-        @html = Nokogiri::HTML(f)
+      File.open(filename, "r:UTF-8") do |f|
+        @xml = Nokogiri::XML(f)
         @articles = []
-        nodes = @html.css('#TEST div span')
+        nodes = @xml.css('article')
         article1 = false
-        nodes.children.each do |child| 
-          # for now skip everything before the first Article
-          article1 = true if child.name == 'h4' && child.inner_text.include?("1")
-          next unless article1
-
-          if child.name == 'h4' 
-            @articles << Article.new(UDHR::Document.clean_text(child.inner_text))
-          else 
-            article = @articles.last
-            data = []
-            if child.name == 'p'
-              data += child.xpath('text()') 
-              article.text = article.text + data.map { |node| UDHR::Document.clean_text(node.inner_text) }
-            end
-            if child.name == 'ul' || child.name == 'ol'
-              data += child.css('li') 
-              article.sections = data.map { |node| UDHR::Document.clean_text(node.inner_text) }
-            end
-            
-          end
+        nodes.each do |node| 
+          title = node.css('title').text
+          #title = UDHR::Document.clean_text(title)
+          text = node.css('para').map(&:text)
           
+          @articles << Article.new(title, text)
         end
       end
     end
