@@ -1,9 +1,33 @@
+# see fair use guidelines: http://www.ethnologue.com/FairUseGuidelines.pdf
+# Up to 10% or 2500 fields or cell entries, whichever is less
+# 350 / 6700 is 5.2%
 require 'sinatra'
+require './ethnologue/language_info'
 
-codes = ["abk", "ace", "acu", "acu", "ada", "afr", "agr", "aii", "ajg", "aka", "aka", "aka", "als", "alt", "amc", "ame", "amh", "amr", "arb", "arl", "arn", "ast", "auc", "auv", "ayr", "azj", "azj", "bam", "ban", "bba", "bci", "bcl", "bel", "bem", "ben", "bho", "bin", "bis", "blu", "boa", "bod", "bos", "bos", "bre", "btb", "bug", "bul", "cab", "cak", "cat", "cbi", "cbr", "cbs", "cbt", "cbu", "ccx", "ceb", "ces", "cha", "chj", "chk", "cic", "cjk", "cjk", "cjs", "ckb", "cmn", "cmn", "cnh", "cni", "cof", "cos", "cot", "cpu", "crs", "csa", "csw", "ctd", "cym", "dag", "dan", "ddn", "deu", "deu", "dga", "dip", "div", "dyo", "ell", "ell", "emk", "rgn", "epo", "est", "eus", "eve", "evn", "ewe", "fao", "fij", "fin", "flm", "fon", "fri", "fuc", "fur", "gaa", "gag", "gax", "gjn", "gkp", "gla", "gle", "glg", "guc", "gug", "guj", "gyr", "hat", "hat", "hau", "hau", "haw", "hea", "heb", "hil", "hin", "hms", "hna", "hni", "hrv", "hsb", "hun", "hus", "huu", "hva", "hye", "ibb", "ibo", "ido", "ike", "ilo", "ina", "ind", "isl", "ita", "jav", "jiv", "jpn", "kal", "kan", "kat", "kaz", "kbp", "kde", "kea", "kek", "khk", "khm", "kin", "kir", "kjh", "kmb", "knc", "kng", "kng", "koo", "kor", "kqn", "kri", "krl", "ktu", "kwi", "lao", "lat", "lat", "lav", "lia", "lin", "lin", "lit", "lnc", "lns", "lot", "loz", "ltz", "lua", "lue", "lug", "lun", "mad", "mag", "mah", "mai", "mal", "mam", "mar", "maz", "mcd", "mcf", "men", "mic", "min", "miq", "mkd", "mlt", "mly", "mly", "mos", "mri", "mxi", "mxv", "mya", "mzi", "nav", "nba", "nbl", "ndo", "nep", "nhn", "nld", "nno", "nob", "not", "nso", "nya", "nya", "nym", "nyn", "nzi", "ojb", "oss", "ote", "pam", "pan", "pau", "pbb", "pcd", "pcm", "pes", "pes", "pis", "plt", "pnb", "pol", "pon", "pov", "ppl", "prq", "prv", "quc", "qud", "qug", "quy", "quz", "qva", "qvc", "qvh", "qvm", "qvn", "qwh", "qxa", "qxn", "qxu", "rar", "rmn", "rmn", "rmy", "roh", "ron", "ron", "ron", "run", "rus", "sag", "sah", "san", "sco", "sey", "shk", "shp", "skr", "slk", "slv", "sme", "smo", "sna", "snk", "snn", "som", "sot", "spa", "src", "srp", "srp", "srr", "ssw", "suk", "sun", "sus", "swe", "swh", "tah", "tam", "tat", "tbz", "tca", "tem", "tet", "tgk", "tgl", "tha", "tir", "tiv", "tob", "toi", "toj", "ton", "top", "tpi", "tsn", "tso", "tsz", "tuk", "tuk", "tur", "tyv", "tzc", "tzh", "tzm", "uig", "uig", "ukr", "umb", "ura", "urd", "uzn", "uzn", "vai", "ven", "vie", "vmw", "war", "wln", "wol", "wwa", "xho", "xsm", "yad", "yao", "yap", "ydd", "ykg", "yor", "yua", "zam", "zro", "ztu", "zul"] 
+get '/' do
+  @lang_info = [ {:name => "English", :iso639_3 => 'eng'},
+                {:name => "German", :iso639_3 => 'deu'},
+                {:name => "Mandarin", :iso639_3 => 'cmn'},
+                {:name => "Afrikaans", :iso639_3 => 'afk'},
+                {:name => "Spanish", :iso639_3 => 'spa'},
+                {:name => "Lingala", :iso639_3 => 'lin'}]
 
+  @world_pop = 1000 * 1000 * 1000 * 8.0
+  @lang_info.each do |info|
+    puts "info==>#{info.inspect}"
+    size = Ethnologue::LanguageInfo.new(info[:iso639_3]).total_population
+    info[:size] = size
+    info[:percent] = sprintf("%0.2f%", size.to_f / @world_pop * 100)
+  end
 
-get '/doc/:lang1/:lang2' do
+  @lang_info.sort! { |a,b|  a[:size] <=> b[:size] }
+  @lang_info.reverse!
 
+  largest = @lang_info.first[:size]
+  @lang_info.each do |info|
+    info[:display_percent] = info[:size].to_f / largest 
+  end
 
+  erb :languages
+  
 end
