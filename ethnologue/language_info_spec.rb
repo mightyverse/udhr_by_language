@@ -20,7 +20,8 @@ describe Ethnologue do
 
   describe "::LanguageInfo" do
     before do
-      @codes =  %w(lin eng afk cmn deu spa)
+      `rm -rf cache`
+      @codes =  %w(lin eng)
       @url = {}
       @page = {}
       @codes.each do |code|

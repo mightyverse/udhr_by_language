@@ -13,6 +13,9 @@ module Ethnologue
     end
 
     def self.init_cache(codes = [])
+      unless Dir.exists?('cache')
+        `mkdir cache`
+      end
       codes.each do |code|
         open(BASE_URL+code) do |f|
           page_content = f.read
