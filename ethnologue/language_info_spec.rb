@@ -19,23 +19,22 @@ describe Ethnologue do
   end
 
   describe "::LanguageInfo" do
-    let(:lin_page) { fixture_file("lin") }
-    let(:eng_page) { fixture_file("eng") }
-    
-    let(:lin_url) {  "#{Ethnologue::BASE_URL}lin" }
-    let(:eng_url) {  "#{Ethnologue::BASE_URL}eng" }
-
-    let (:codes) {  %w(lin eng) }
-
     before do
-      stub_request(:get, lin_url).to_return(:body => lin_page)
-      stub_request(:get, eng_url).to_return(:body => eng_page)
-      Ethnologue::LanguageInfo.init_cache(codes)      
+      @codes =  %w(lin eng afk cmn deu spa)
+      @url = {}
+      @page = {}
+      @codes.each do |code|
+        @url[code] = "#{Ethnologue::BASE_URL}#{code}"
+        @page[code] = fixture_file(code)
+        stub_request(:get, @url[code]).to_return(:body => @page[code])        
+      end
+      Ethnologue::LanguageInfo.init_cache(@codes)      
     end
 
     it "should fetch language on demand" do
-      WebMock.should have_requested(:get, lin_url)
-      WebMock.should have_requested(:get, eng_url)
+      @codes.each do |code|
+        WebMock.should have_requested(:get, @url[code])
+      end
     end
 
     it "should cache language pages" do
