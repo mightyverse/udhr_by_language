@@ -3,6 +3,7 @@
 # 350 / 6700 is 5.2%
 require 'sinatra'
 require './ethnologue/language_info'
+require './udhr/index'
 
 get '/' do
   @lang_info = [ {:name => "English", :iso639_3 => 'eng'},
@@ -11,8 +12,9 @@ get '/' do
                 {:name => "Afrikaans", :iso639_3 => 'afk'},
                 {:name => "Spanish", :iso639_3 => 'spa'},
                 {:name => "Lingala", :iso639_3 => 'lin'}]
+  @lang_info = UDHR::lang_info
 
-  @world_pop = 1000 * 1000 * 1000 * 8.0
+  @world_pop =  6775235700
   @lang_info.each do |info|
     puts "info==>#{info.inspect}"
     size = Ethnologue::LanguageInfo.new(info[:iso639_3]).total_population

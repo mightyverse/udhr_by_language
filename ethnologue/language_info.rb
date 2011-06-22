@@ -6,9 +6,14 @@ module Ethnologue
   class LanguageInfo
     attr_reader :total_population
     def initialize(code)
+      @total_population = 0
       File.open("./cache/#{code}.html") do |f|
         match = f.read.scan(/Population total all countries:\s*(.*)\./)
-        @total_population = match.first.first.split(',').join.to_i
+        if match.nil? or match.first.nil?
+          puts "#{code} match is #{match.inspect}"
+        else 
+          @total_population = match.first.first.split(',').join.to_i
+        end
       end
     end
 
