@@ -32,6 +32,9 @@ get '/' do
   @lang_info.sort! { |a,b|  a[:size] <=> b[:size] }
   @lang_info.reverse!
 
+  @population = @lang_info.inject(0) { |sum, info| sum + info[:size] }
+  puts "---> #{@population} #{@population.to_f / @world_pop * 100}%"
+
   largest = @lang_info.first[:size]
   @lang_info.each do |info|
     info[:display_percent] = info[:size].to_f / largest 
