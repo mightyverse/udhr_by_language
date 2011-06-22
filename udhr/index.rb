@@ -9,7 +9,9 @@ module UDHR
       docs = Nokogiri::XML(f).css('udhr')
       docs = docs.find_all { |doc| doc['iso639-3'] != '' and doc['stage'] >= '4' }      
       lang_info = docs.map do |doc| 
-        { :name => doc['n'], :code => doc['iso639-3'] } 
+        link_name = doc['l']
+        link_name += "_#{doc['v']}" unless doc['v'].nil? or doc['v'] == ""
+        { :name => doc['n'], :code => doc['iso639-3'], :unicode_link => "http://unicode.org/udhr/d/udhr_#{link_name}.html" } 
       end
     end
     lang_info.uniq! { |i| i[:code] }
