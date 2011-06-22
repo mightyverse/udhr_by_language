@@ -10,8 +10,10 @@ module Ethnologue
       @total_population = 0
       filename = LanguageInfo.fetch(code)
       File.open(filename) do |f|
-        match = f.read.scan(/Population total all countries:\s*(.*)\./)
-        if match.nil? or match.first.nil?
+        s = f.read
+        match = s.scan(/Population total all countries:\s*(.*)\./)
+        match = s.scan(/>Population<.*?([\d,]+)/m) if match.empty?
+        if match.empty?
           puts "#{code} match is #{match.inspect}"
         else 
           @total_population = match.first.first.split(',').join.to_i

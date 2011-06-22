@@ -21,7 +21,7 @@ describe Ethnologue do
   describe "::LanguageInfo" do
     before do
       `rm -rf cache`
-      @codes =  %w(lin eng afk)
+      @codes =  %w(lin eng afk ace arb)
       @url = {}
       @page = {}
       @codes.each do |code|
@@ -52,15 +52,21 @@ describe Ethnologue do
       it "should report language population" do
         Ethnologue::LanguageInfo.new('eng').total_population.should == 328008138
         Ethnologue::LanguageInfo.new('lin').total_population.should == 2141300
-      end
-    end
 
+        # these have diff formatting
+        Ethnologue::LanguageInfo.new('ace').total_population.should == 3500000
+        Ethnologue::LanguageInfo.new('arb').total_population.should == 206000000
+
+      end
+      
+    end
     it "should fetch a language if not cached" do
       stub_request(:get, @url['afk']).to_return(:body => @page['afk'])            
       Ethnologue::LanguageInfo.new('afk').total_population.should == 4934950
-      WebMock.should have_requested(:get, 'afk')      
+      WebMock.should have_requested(:get, @url['afk'])      
       File.should exist('./cache/afk.html')
 
     end
+
   end
 end

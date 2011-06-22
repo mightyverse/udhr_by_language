@@ -27,6 +27,8 @@ get '/' do
     info[:percent] = percent_str
   end
 
+  @lang_info = @lang_info.find_all { |info| info[:size] > 0 }
+
   @lang_info.sort! { |a,b|  a[:size] <=> b[:size] }
   @lang_info.reverse!
 
@@ -35,23 +37,6 @@ get '/' do
     info[:display_percent] = info[:size].to_f / largest 
   end
 
-  @first_half = []
-  @top_80 = []
-  @rest = []
-  half_pop =  @world_pop / 2
-  eighty_percent = @world_pop * 0.8
-  tally = 0
-  @lang_info.each_with_index do |lang, index|
-    if tally < half_pop 
-      @first_half << lang
-    elsif tally < eighty_percent
-      @top_80 << lang
-    else
-      @rest << lang
-    end
-  end
-  puts "========> first half: #{@first_half.length}"
-  puts @first_half.inspect
   erb :languages
   
 end

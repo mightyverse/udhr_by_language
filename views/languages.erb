@@ -25,7 +25,7 @@
                 display: block;
                 margin: 1px;
                 margin-right: 20px;
-                width: 360px;
+                width: 460px;
                 float: left;
             }
             .list .graph {
@@ -53,22 +53,7 @@
 <p>World Population: 6,775,235,700 in 2009 Source: World Bank, World Development Indicators 
 <div class="list">
   <ul>
-  <% @first_half.each do |lang| %>
-    <li><%= erb :_language, :locals => {:lang => lang} %> </li>
-  <% end %>
-  </ul>
-</div>
-<p>xxxxxxxxxxxxxxx</p>
-<div class="list">
-  <ul>
-  <% @top_80.each do |lang| %>
-    <li><%= erb :_language, :locals => {:lang => lang} %> </li>
-  <% end %>
-  </ul>
-</div>
-<div class="list">
-  <ul>
-  <% @rest.each do |lang| %>
+  <% @lang_info.each do |lang| %>
     <li><%= erb :_language, :locals => {:lang => lang} %> </li>
   <% end %>
   </ul>
