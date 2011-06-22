@@ -54,10 +54,7 @@
 <div class="list">
   <ul>
   <% @lang_info.each do |lang| %>
-    <li><p><%= lang[:name] %> <%= lang[:size]%>   <%= lang[:percent]%></p>
-    <div class="graph">
-    <div style="width:<%=500*lang[:display_percent]%>px;margin-left:<%=(500-500*lang[:display_percent])/2%>px" class="bar"/></li>
-    </dev>
+    <li><%= erb :_language, :locals => {:lang => lang} %> </li>
   <% end %>
   </ul>
 </div>
