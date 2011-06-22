@@ -21,31 +21,46 @@ describe Ethnologue do
   describe "::LanguageInfo" do
     before do
       `rm -rf cache`
-      @codes =  %w(lin eng)
+      @codes =  %w(lin eng afk)
       @url = {}
       @page = {}
       @codes.each do |code|
         @url[code] = "#{Ethnologue::BASE_URL}#{code}"
         @page[code] = fixture_file(code)
-        stub_request(:get, @url[code]).to_return(:body => @page[code])        
-      end
-      Ethnologue::LanguageInfo.init_cache(@codes)      
-    end
-
-    it "should fetch language on demand" do
-      @codes.each do |code|
-        WebMock.should have_requested(:get, @url[code])
       end
     end
 
-    it "should cache language pages" do
-      File.should exist('./cache/lin.html')
-      File.should exist('./cache/eng.html')
+   describe "with cached results" do
+      before do
+        @codes = @codes - ['afk']
+        @codes.each do |code|
+          stub_request(:get, @url[code]).to_return(:body => @page[code])        
+        end
+        Ethnologue::LanguageInfo.init_cache(@codes)      
+      end
+      it "should fetch language on demand" do
+        @codes.each do |code|
+          WebMock.should have_requested(:get, @url[code])
+        end
+      end
+
+      it "should cache language pages" do
+        File.should exist('./cache/lin.html')
+        File.should exist('./cache/eng.html')
+      end
+
+      it "should report language population" do
+        Ethnologue::LanguageInfo.new('eng').total_population.should == 328008138
+        Ethnologue::LanguageInfo.new('lin').total_population.should == 2141300
+      end
     end
 
-    it "should report language population" do
-      Ethnologue::LanguageInfo.new('eng').total_population.should == 328008138
-      Ethnologue::LanguageInfo.new('lin').total_population.should == 2141300
+    it "should fetch a language if not cached" do
+      stub_request(:get, @url['afk']).to_return(:body => @page['afk'])            
+      Ethnologue::LanguageInfo.new('afk').total_population.should == 4934950
+      WebMock.should have_requested(:get, 'afk')      
+      File.should exist('./cache/afk.html')
+
     end
   end
 end
