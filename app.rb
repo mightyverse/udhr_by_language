@@ -5,14 +5,19 @@ require 'sinatra'
 require './ethnologue/language_info'
 require './udhr/index'
 
+# borrowed from Rails
+def number_with_delimiter(number, delimiter=",")
+  number.to_s.gsub(/(\d)(?=(\d\d\d)+(?!\d))/, "\\1#{delimiter}")
+end
+
 get '/' do
   @lang_info = UDHR::index
 
   @world_pop =  6775235700
   @lang_info.each do |info|
-    puts "info==>#{info.inspect}"
     size = Ethnologue::LanguageInfo.new(info[:code]).total_population
     info[:size] = size
+    info[:size_str] = number_with_delimiter(size, ",")
     percent = size.to_f / @world_pop * 100
     percent_str = sprintf("%0.2f%", percent)
     percent_str = sprintf("%0.3f%", percent) if percent < 0.15
@@ -30,6 +35,23 @@ get '/' do
     info[:display_percent] = info[:size].to_f / largest 
   end
 
+  @first_half = []
+  @top_80 = []
+  @rest = []
+  half_pop =  @world_pop / 2
+  eighty_percent = @world_pop * 0.8
+  tally = 0
+  @lang_info.each_with_index do |lang, index|
+    if tally < half_pop 
+      @first_half << lang
+    elsif tally < eighty_percent
+      @top_80 << lang
+    else
+      @rest << lang
+    end
+  end
+  puts "========> first half: #{@first_half.length}"
+  puts @first_half.inspect
   erb :languages
   
 end
