@@ -49,13 +49,17 @@
 </style>
 </head>
 <body>
-<h1>Just a Few Languages</h1>
-<p>There are over 7000 languages spoken in the world today, 83 languages reach almost 80% of the world population (<a href="http://www.swarthmore.edu/SocSci/langhotspots/globaltrends.html">Swartmore Global Language Trends</a>). The <a href="http://www.ohchr.org/EN/UDHR/Pages/Introduction.aspx">Declaration of Human Rights</a> has been translated in 375 languages, making it most translated document in the world.  (Note: that the Bible is the most translated <i>book</i>.)  The graph below shows the <%= @lang_info.length %> languages that the <a href="http://unicode.org/udhr/">Unicode organization</a> has made available in XML format. Population numbers below are reported by <a href="http://www.ethnologue.com">Ethnologue</a> which has an interesting report about <a href="http://www.ethnologue.com/ethno_docs/distribution.asp?by=size">top languages by size</a>.</p>
+<h1>Unversal Declaration of Human Rights Record-A-Thon</h1>
+<p>There are over 7000 languages spoken in the world today, 83 languages reach almost 80% of the world population (<a href="http://www.swarthmore.edu/SocSci/langhotspots/globaltrends.html">Swartmore Global Language Trends</a>). The <a href="http://www.ohchr.org/EN/UDHR/Pages/Introduction.aspx">Declaration of Human Rights</a> has been translated in 375 languages, making it the most translated document in the world.  (Note: that the Bible is the most translated <i>book</i>.)  The graph below shows the <%= @lang_info.length %> languages that the <a href="http://unicode.org/udhr/">Unicode organization</a> has made available in XML format. Population numbers below are reported by <a href="http://www.ethnologue.com">Ethnologue</a> which has an interesting report about <a href="http://www.ethnologue.com/ethno_docs/distribution.asp?by=size">top languages by size</a>.</p>
 
 <p>These numbers are for native language speakers, if we include non-native speakers, the numbers would be different, but I don't know of any comprehensive source for that data. For example, the British Council estimates over 1.1B people worldwide speak English in addition to the 328M native English speakers reported by Ethnologue.</p>
 
-<p>This visualization project was inspired by the <a href="http://www.mightyverse.com/">Mightyverse</a> collaboration with the <a href="http://rosettaproject.org/">Rosetta Project</a> which seeks to record the Declaration of Human Rights in 300 languages. Please send any errors or feedback to <a href="http://www.ultrasaurus.com/emailme.php">Sarah Allen</a>.</p>
-<p>World Population: 6,775,235,700 in 2009 Source: World Bank, World Development Indicators 
+<p>This visualization project was inspired by the <a href="http://www.mightyverse.com/">Mightyverse</a> collaboration with the <a href="http://rosettaproject.org/">Rosetta Project</a> which seeks to record the Declaration of Human Rights in 300 languages.</p>
+
+<p>If you can join us in person for the July 30th Record-A-Thon, please <a href="https://spreadsheets.google.com/spreadsheet/viewform?hl=en_US&formkey=dEM2cW9wSm4za0VmSHZwTEI2amxhNUE6MQ#gid=1">sign up here</a>.</p>
+<p>Please send any errors or feedback to <a href="http://www.ultrasaurus.com/emailme.php">Sarah Allen</a>.</p>
+
+<p>World Population: 6,775,235,700 in 2009 Source: World Bank, World Development Indicators</p>
 <div class="list">
   <ul>
   <% @lang_info.each do |lang| %>
