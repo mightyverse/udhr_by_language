@@ -1,0 +1,338 @@
+abk - Abkhaz
+ace - Aceh
+acu - Achuar-Shiwiar
+ada - Dangme
+afr - Afrikaans
+agr - Aguaruna
+aii - Assyrian Neo-Aramaic
+ajg - Aja
+aka - Akan
+als - Albanian, Tosk
+alt - Altai, Southern
+amc - Amahuaca
+ame - Yaneshaʼ
+amh - Amharic
+amr - Amarakaeri
+arb - Arabic, Standard
+arl - Arabela
+arn - Mapudungun
+ast - Asturian
+auc - Waorani
+auv - Auvergnat
+ayr - Aymara, Central
+azj - Azerbaijani, North
+bam - Bamanankan
+ban - Bali
+bba - Baatonum
+bci - Baoulé
+bcl - Bicolano, Central
+bel - Belarusan
+bem - Bemba
+ben - Bengali
+bho - Bhojpuri
+bin - Edo
+bis - Bislama
+blu - Hmong Njua
+boa - Bora
+bod - Tibetan, Central
+bos - Bosnian
+bre - Breton
+btb - Beti
+bug - Bugis
+bul - Bulgarian
+cab - Garifuna
+cak - Kaqchikel, Central
+cat - Catalan-Valencian-Balear
+cbi - Chachi
+cbr - Cashibo-Cacataibo
+cbs - Cashinahua
+cbt - Chayahuita
+cbu - Candoshi-Shapra
+ccx - Zhuang, Northern
+ceb - Cebuano
+ces - Czech
+cha - Chamorro
+chj - Chinantec, Ojitlán
+chk - Chuukese
+cic - Chickasaw
+cjk - Chokwe (Angola)
+cjs - Shor
+ckb - Kurdish, Central
+cmn - Chinese, Mandarin (Traditional)
+cnh - Chin, Haka
+cni - Asháninka
+cof - Colorado
+cos - Corsican
+cot - Caquinte
+cpu - Ashéninka, Pichis
+crs - Seselwa Creole French
+csa - Chinantec, Chiltepec
+csw - Cree, Swampy
+ctd - Chin, Tedim
+cym - Welsh
+dag - Dagbani
+dan - Danish
+ddn - Dendi
+deu - German, Standard (1996)
+dga - Dagaare, Southern
+dip - Dinka, Northeastern
+div - Maldivian
+dyo - Jola-Fonyi
+ell - Greek (polytonic)
+emk - Maninkakan, Eastern
+rgn - Emiliano-Romagnolo
+eng - English
+epo - Esperanto
+est - Estonian
+eus - Basque
+eve - Even
+evn - Evenki
+ewe - Éwé
+fao - Faroese
+fij - Fijian
+fin - Finnish
+flm - Chin, Falam
+fon - Fon
+fra - French
+fri - Frisian, Western
+fuc - Pulaar
+fur - Friulian
+gaa - Ga
+gag - Gagauz
+gax - Oromo, Borana-Arsi-Guji
+gjn - Gonja
+gkp - Kpelle, Guinea
+gla - Gaelic, Scottish
+gle - Gaelic, Irish
+glg - Galician
+guc - Wayuu
+gug - Guaraní, Paraguayan
+guj - Gujarati
+gyr - Guarayu
+hat - Haitian Creole French
+hau - Hausa (Nigeria)
+haw - Hawaiian
+hea - Hmong, Northern Qiandong
+heb - Hebrew
+hil - Hiligaynon
+hin - Hindi
+hms - Hmong, Southern Qiandong
+hna - Mina
+hni - Hani
+hrv - Croatian
+hsb - Sorbian, Upper
+hun - Hungarian
+hus - Huastec, Veracruz
+huu - Huitoto, Murui
+hva - Huastec, San Luís Potosí
+hye - Armenian
+ibb - Ibibio
+ibo - Igbo
+ido - Ido
+ike - Inuktitut, Eastern Canadian
+ilo - Ilocano
+ina - Interlingua
+ind - Indonesian
+isl - Icelandic
+ita - Italian
+jav - Javanese
+jiv - Shuar
+jpn - Japanese
+kal - Inuktitut, Greenlandic
+kan - Kannada
+kat - Georgian
+kaz - Kazakh
+kbp - Kabiyé
+kde - Makonde
+kea - Kabuverdianu
+kek - Q'eqchi'
+khk - Mongolian, Halh (Cyrillic)
+khm - Khmer, Central
+kin - Rwanda
+kir - Kirghiz
+kjh - Khakas
+kmb - Mbundu
+knc - Kanuri, Central
+kng - Koongo (Angola)
+koo - Konjo
+kor - Korean
+kqn - Kaonde
+kri - Krio
+krl - Karelian
+ktu - Kituba
+kwi - Awa-Cuaiquer
+lao - Lao
+lat - Latin
+lav - Latvian
+lia - Limba, West-Central
+lin - Lingala (tones)
+lit - Lithuanian
+lnc - Languedocien
+lns - Lamnso'
+lot - Otuho
+loz - Lozi
+ltz - Luxembourgeois
+lua - Luba-Kasai
+lue - Luvale
+lug - Ganda
+lun - Lunda
+mad - Madura
+mag - Magahi
+mah - Marshallese
+mai - Maithili
+mal - Malayalam
+mam - Mam, Northern
+mar - Marathi
+maz - Mazahua Central
+mcd - Sharanahua
+mcf - Matsés
+men - Mende
+mic - Micmac
+min - Minangkabau
+miq - Mískito
+mkd - Macedonian
+mlt - Maltese
+mly - Malay (Latin)
+mos - Mòoré
+mri - Maori
+mxi - Mozarabic
+mxv - Mixtec, Metlatónoc
+mya - Burmese
+mzi - Mazatec, Ixcatlán
+nav - Navajo
+nba - Nyemba
+nbl - Ndebele
+ndo - Ndonga
+nep - Nepali
+nhn - Nahuatl, Central
+nld - Dutch
+nno - Norwegian, Nynorsk
+nob - Norwegian, Bokmål
+not - Nomatsiguenga
+nso - Sotho, Northern
+nya - Nyanja
+nym - Nyamwezi
+nyn - Nyankore
+nzi - Nzema
+ojb - Ojibwa, Northwestern
+oss - Osetin
+ote - Otomi, Mezquital
+pam - Pampangan
+pan - Panjabi, Eastern
+pau - Palauan
+pbb - Páez
+pcd - Picard
+pcm - Pidgin, Nigerian
+pes - Farsi, Western
+pis - Pijin
+plt - Malagasy, Plateau
+pnb - Panjabi, Western
+pol - Polish
+pon - Pohnpeian
+por - Portuguese (Portugal)
+pov - Crioulo, Upper Guinea
+ppl - Pipil
+prq - Ashéninka Perené
+prv - Provençal
+quc - K'iche', Central
+qud - Quichua, Calderón Highland
+qug - Quichua, Chimborazo Highland
+quy - Quechua, Ayacucho
+quz - Quechua, Cusco
+qva - Quechua, Ambo-Pasco
+qvc - Quechua, Cajamarca
+qvh - Quechua, Huamalíes-Dos de Mayo Huánuco
+qvm - Quechua, Margos-Yarowilca-Lauricocha
+qvn - Quechua, North Junín
+qwh - Quechua, Huaylas Ancash
+qxa - Quechua, Chiquián Ancash
+qxn - Quechua, Northern Conchucos Ancash
+qxu - Quechua, Arequipa-La Unión
+rar - Rarotongan
+rmn - Romani, Balkan
+rmy - Romani, Vlax
+roh - Romansch
+ron - Romanian (2006)
+run - Rundi
+rus - Russian
+sag - Sango
+sah - Yakut
+san - Sanskrit
+sco - Scots
+sey - Secoya
+shk - Shilluk
+shp - Shipibo-Conibo
+skr - Seraiki
+slk - Slovak
+slv - Slovenian
+sme - Saami, North
+smo - Samoan
+sna - Shona
+snk - Soninke
+snn - Siona
+som - Somali
+sot - Sotho, Southern
+spa - Spanish
+src - Sardinian, Logudorese
+srp - Serbian
+srr - Serer-Sine
+ssw - Swati
+suk - Sukuma
+sun - Sunda
+sus - Susu
+swe - Swedish
+swh - Swahili
+tah - Tahitian
+tam - Tamil
+tat - Tatar
+tbz - Ditammari
+tca - Ticuna
+tem - Themne
+tet - Tetun
+tgk - Tajiki
+tgl - Tagalog
+tha - Thai
+tir - Tigrigna
+tiv - Tiv
+tob - Toba
+toi - Tonga
+toj - Tojolabal
+ton - Tongan
+top - Totonac, Papantla
+tpi - Tok Pisin
+tsn - Tswana
+tso - Tsonga (Mozambique)
+tsz - Purepecha
+tuk - Turkmen
+tur - Turkish
+tyv - Tuva
+tzc - Tzotzil, Chamula
+tzh - Tzeltal, Oxchuc
+tzm - Tamazight, Central Atlas
+uig - Uyghur
+ukr - Ukrainian
+umb - Umbundu
+ura - Urarina
+urd - Urdu
+uzn - Uzbek, Northern
+vai - Vai
+ven - Venda
+vie - Vietnamese
+vmw - Makhuwa
+war - Waray-Waray
+wln - Walloon
+wol - Wolof
+wwa - Waama
+xho - Xhosa
+xsm - Kasem
+yad - Yagua
+yao - Yao
+yap - Yapese
+ydd - Yiddish, Eastern
+ykg - Yukaghir, Northern
+yor - Yoruba
+yua - Maya, Yucatán
+zam - Zapotec, Miahuatlán
+zro - Záparo
+ztu - Zapotec, Güilá
+zul - Zulu
