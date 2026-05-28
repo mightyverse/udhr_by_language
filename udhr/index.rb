@@ -11,7 +11,7 @@ module UDHR
       lang_info = docs.map do |doc| 
         link_name = doc['l']
         link_name += "_#{doc['v']}" unless doc['v'].nil? or doc['v'] == ""
-        { :name => doc['n'], :code => doc['iso639-3'], :unicode_link => "http://unicode.org/udhr/d/udhr_#{link_name}.html" } 
+        { :name => doc['n'], :code => doc['iso639-3'], :unicode_link => "http://efele.net/udhr/d/udhr_#{link_name}.html" } 
       end
     end
     lang_info.uniq! { |i| i[:code] }

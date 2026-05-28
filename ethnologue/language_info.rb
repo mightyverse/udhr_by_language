@@ -22,11 +22,11 @@ module Ethnologue
     end
 
     def self.fetch(code)
-      unless Dir.exists?('cache')
+      unless Dir.exist?('cache')
         `mkdir cache`
       end
       filename = "./cache/#{code}.html"
-      unless File.exists?(filename) 
+      unless File.exist?(filename) 
         open(BASE_URL+code) do |f|
           page_content = f.read
           File.open(filename, "w") do |cache_file|

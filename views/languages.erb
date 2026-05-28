@@ -58,9 +58,7 @@
 <p>World Population: 6,775,235,700 in 2009 Source: World Bank, World Development Indicators 
 <div class="list">
   <ul>
-  <% @lang_info.each do |lang| %>
-    <li><%= erb :_language, :locals => {:lang => lang} %> </li>
-  <% end %>
+  <%= @lang_items %>
   </ul>
 </div>
 </body>

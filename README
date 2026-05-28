@@ -1,4 +1,15 @@
-Parse Universal Declaration of Human Rights
+# Universal Declaration of Human Rights by language
 
-http://www.un.org/en/documents/udhr/index.shtml
+## to build the static site
 
+```
+ruby build-static.rb
+```
+
+## Notes
+
+The UDHR in Unicode project was taken over by Eric Muller (the original creator), and the web content and git repo were moved to a domain he owns. The unicode.org/udhr/ path no longer hosts the files. unicode
+The project now lives in two places:
+
+* New website —  http://efele.net/udhr/ 
+* GitHub repo — the repository is at https://github.com/eric-muller/udhr, where the raw source files are available under the data/ folder. 
