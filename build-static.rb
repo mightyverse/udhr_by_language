@@ -2,7 +2,7 @@ require 'erb'
 require './ethnologue/language_info'
 require './udhr/index'
 
-OUTPUT_DIR = 'public'
+OUTPUT_DIR = 'docs'
 WORLD_POP  = 6_775_235_700
 
 def number_with_delimiter(number, delimiter = ',')
